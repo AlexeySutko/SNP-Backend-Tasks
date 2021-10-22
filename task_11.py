@@ -1,7 +1,7 @@
 
 
 class Dessert(object):
-    def __init__(self, name, calories):
+    def __init__(self, name = None, calories = None):
         self.name = name
         self.calories = calories
 
@@ -25,3 +25,5 @@ class Dessert(object):
 
     def is_delicious(self):
         return True
+
+dessert = Dessert()

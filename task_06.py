@@ -18,7 +18,9 @@ class NoSuchStrategyError(Exception):
 
 def rps_game_winner(players):
     if isinstance(players, list):
+        numOfPlayersErr = "WrongNumberOfPlayersError"
         if len(players) == 2:
+            strategyErr = "NoSuchStrategyError"
             choices = "rpsRPS"
             player1 = players[0]
             player2 = players[1]
@@ -38,15 +40,15 @@ def rps_game_winner(players):
                     return player2
 
             else:
-                raise NoSuchStrategyError("")
+                return strategyErr
         else:
-            raise WrongNumberOfPlayersError(len(players))
+            return numOfPlayersErr
 
     else:
         print("Wrong input")
 
 
-print(rps_game_winner([['player1', 'P'], ['player2', 'S']]))
+print(rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']]))
 print(rps_game_winner([['player1', 'P'], ['player2', 'r']]))
 print(rps_game_winner([['player1', 'P'], ['player2', 'p']]))
 print(rps_game_winner([['player1', 'P'], ['player2', 'a']]))

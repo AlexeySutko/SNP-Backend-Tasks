@@ -3,7 +3,7 @@ from task_11 import Dessert
 
 class JellyBean(Dessert):
 
-    def __init__(self, name, calories, flavour):
+    def __init__(self, name = None, calories = None, flavour = None):
         super().__init__(name, calories)
         self.flavour = flavour
     
@@ -19,9 +19,4 @@ class JellyBean(Dessert):
         else:
             return False
 
-x = JellyBean("Bobba", 200, "tasty")
-print(x.get_name())
-print(x.get_calories())
-print(x.is_healthy())
-print(x.get_flavour())
-print(x.is_delicious())
+dessert = JellyBean()

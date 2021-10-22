@@ -6,7 +6,7 @@ def date_in_future(integer):
         now = datetime.now() + timedelta(days=integer)
     else:
         now = datetime.now()
-    currentTime = now.strftime("%d-%m-%y %H:%M:%S")
+    currentTime = now.strftime("%d-%m-%Y %H:%M:%S")
     return currentTime
 
 
