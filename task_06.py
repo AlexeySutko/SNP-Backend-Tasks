@@ -1,19 +1,12 @@
 
 
 class WrongNumberOfPlayersError(Exception):
-    def __init__(self, value):
-        self.value = value
-
-    def __str__(self):
-        return "WrongNumberOfPlayersError"
+    def __init__(self, message = "WrongNumberOfPlayersError"):
+        self.message = message
 
 class NoSuchStrategyError(Exception):
-    def __init__(self, value):
-        self.value = value
-
-    def __str__(self):
-        return "NoSuchStrategyError"
-
+    def __init__(self, message = "NoSuchStrategyError"):
+        self.message = message
 
 
 def rps_game_winner(players):
@@ -38,15 +31,15 @@ def rps_game_winner(players):
                     return player2
 
             else:
-                raise NoSuchStrategyError("")
+                raise NoSuchStrategyError()
         else:
-            raise WrongNumberOfPlayersError(len(players))
+            raise WrongNumberOfPlayersError()
 
     else:
         print("Wrong input")
 
 
-print(rps_game_winner([['player1', 'P'], ['player2', 'S']]))
+print(rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player2', 'S']]))
 print(rps_game_winner([['player1', 'P'], ['player2', 'r']]))
 print(rps_game_winner([['player1', 'P'], ['player2', 'p']]))
 print(rps_game_winner([['player1', 'P'], ['player2', 'a']]))
