@@ -15,7 +15,7 @@ class Dessert(object):
         self.name = name
 
     def set_calories(self, calories):
-        self.calories = calories
+        self.calories = int(calories)
 
     def is_healthy(self):
         if self.calories < 200:

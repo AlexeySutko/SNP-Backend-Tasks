@@ -15,6 +15,8 @@ def rps_game_winner(players):
             choices = "rpsRPS"
             player1 = players[0]
             player2 = players[1]
+            strPlayer1 = " ".join(player1)
+            strPlayer2 = " ".join(player2)
 
             chose_list = []
             chose_list.append(player1[1])
@@ -24,11 +26,11 @@ def rps_game_winner(players):
 
             if player1[1] in choices and player2[1] in choices:
                 if chose.lower() == "pp" or chose.lower() == "ss" or chose.lower() == "rr":
-                    return player1
+                    return strPlayer1
                 elif chose.lower() == "rs" or chose.lower() == "pr" or chose.lower() == "sp":
-                    return player1
+                    return strPlayer1
                 elif chose.lower() == "sr" or chose.lower() == "rp" or chose.lower() == "ps":
-                    return player2
+                    return strPlayer2
 
             else:
                 raise NoSuchStrategyError()
@@ -39,7 +41,7 @@ def rps_game_winner(players):
         print("Wrong input")
 
 
-print(rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player2', 'S']]))
+print(rps_game_winner([['player1', 'P'], ['player2', 'S']]))
 print(rps_game_winner([['player1', 'P'], ['player2', 'r']]))
 print(rps_game_winner([['player1', 'P'], ['player2', 'p']]))
 print(rps_game_winner([['player1', 'P'], ['player2', 'a']]))
