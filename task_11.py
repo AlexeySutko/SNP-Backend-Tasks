@@ -15,10 +15,14 @@ class Dessert(object):
         self.name = name
 
     def set_calories(self, calories):
-        self.calories = int(calories)
+        self.calories = calories
 
     def is_healthy(self):
-        if self.calories < 200:
+        if type(self.calories) is not int:
+            for x in self.calories:
+                if x not in "1234567890":
+                    return False
+        if int(self.calories) < 200:
             return True
         else:
             return False
@@ -26,4 +30,5 @@ class Dessert(object):
     def is_delicious(self):
         return True
 
-dessert = Dessert()
+dessert = Dessert("Boobba", "100")
+print(dessert.is_healthy())
