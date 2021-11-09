@@ -18,11 +18,25 @@ class Dessert(object):
         self.calories = calories
 
     def is_healthy(self):
-        if type(self.calories) is not int:
-            for x in self.calories:
-                if x not in "1234567890":
+        if self.calories is None:
+            return False
+
+        if type(self.calories) is int:
+            value = self.calories
+        elif type(self.calories) is float:
+            value = self.calories
+        else:
+            try:
+                self.calories = int(self.calories)
+                value = int(self.calories)
+            except ValueError:
+                try:
+                    self.calories = float(self.calories)
+                    value = float(self.calories)
+                except ValueError:
                     return False
-        if int(self.calories) < 200:
+
+        if value < 200:
             return True
         else:
             return False
@@ -30,5 +44,5 @@ class Dessert(object):
     def is_delicious(self):
         return True
 
-dessert = Dessert("Boobba", "100")
+dessert = Dessert(calories=200)
 print(dessert.is_healthy())
