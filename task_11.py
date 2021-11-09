@@ -43,6 +43,3 @@ class Dessert(object):
 
     def is_delicious(self):
         return True
-
-dessert = Dessert(calories=200)
-print(dessert.is_healthy())
